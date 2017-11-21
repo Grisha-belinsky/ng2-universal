@@ -1,0 +1,83 @@
+/* Add here all your css styles (customizations) */
+.carousel-caption {
+    color: white;
+    left: 58%;
+    text-align: center;
+    max-width: 500px;
+    right: auto;
+    top: auto;
+}
+.carousel-caption-header i {
+    color: #f9f9f9 !important;
+    line-height: 50px;
+    top: 100px;
+    z-index: 10;
+    padding: 5px;
+    margin: 5px;
+    font-size: 1.2em;
+    font-weight: 100 !important;
+    background-color:#5cb85c;
+}
+
+.carousel-indicators li {
+  background-color: #4765a0;
+  border-radius: 20px;
+}
+
+/* Adding custom button to color - #c33c3a */
+
+.btn-c {
+	border: 0;
+	color: #fff;
+	font-size: 14px;
+	cursor: pointer;
+	font-weight: 400;
+	padding: 6px 13px;
+	position: relative;
+	background: #d14836;
+	white-space: nowrap;
+	display: inline-block;
+	text-decoration: none;
+}
+
+.btn-c:hover,
+.btn-c:focus,
+.btn-c:active,
+.btn-c.active,
+.open .dropdown-toggle.btn-c {
+	background: #c33c3a;
+	color: #fff;
+}
+
+.btn-c:hover {
+	color: #fff;
+	text-decoration: none;
+	transition: all 0.3s ease-in-out;
+}
+
+.btn-c.btn-block {
+	text-align: center;
+}
+
+.btn-c-sm,
+a.btn-c-sm {
+	padding: 3px 12px;
+}
+
+.btn-c-md,
+a.btn-c-md {
+	padding: 10px 20px;
+}
+
+.btn-c-lg,
+a.btn-c-lg {
+	font-size: 18px;
+	padding: 10px 25px;
+}
+
+.btn-c-xs,
+a.btn-c-xs {
+	font-size: 12px;
+	padding: 2px 12px;
+	line-height: 18px;
+}

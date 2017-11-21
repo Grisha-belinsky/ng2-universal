@@ -1,0 +1,62 @@
+<div class="header">
+  <div class="container">
+    <!-- Logo -->
+    <a class="logo" routerLink="/crm">
+      <img src="/assets/images/logo-header.png" alt="CRM with Project Management, Quotes and Invoices">
+    </a>
+    <!-- End Logo -->
+
+    <!-- Topbar -->
+    <div class="topbar">
+      <ul class="loginbar pull-right">
+        <li><a class="btn-c" routerLink="/login">Login</a></li>
+      </ul>
+    </div>
+    <!-- End Topbar -->
+
+    <!-- Toggle get grouped for better mobile display -->
+    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-responsive-collapse">
+      <span class="sr-only"></span>
+      <span class="fa fa-bars"></span>
+    </button>
+    <!-- End Toggle -->
+  </div><!--/end container-->
+
+  <!-- Collect the nav links, forms, and other content for toggling -->
+  <div class="collapse navbar-collapse mega-menu navbar-responsive-collapse">
+    <div class="container">
+      <ul class="nav navbar-nav">
+        <!-- Home -->
+        <li><a routerLink="/crm" class="active">CRM</a></li>
+        <li class="dropdown mega-menu">
+          <a href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown">
+            Features
+          </a>
+          <ul class="dropdown-menu">
+            <li><a routerLink="/crm/sales-automation">Sales Automation</a></li>
+            <li><a routerLink="/crm/contact-management">Contact Management</a></li>
+            <li><a routerLink="/crm/team-calendar">Calendar - Team</a></li>
+            <li><a routerLink="/crm/quotes-invoices">Invoicing</a></li>
+            <li><a routerLink="/crm/app-integrations">Integrations</a></li>
+            <li><a routerLink="/crm/business-reports">Reports</a></li>
+          </ul>
+        </li>
+
+
+        <li><a routerLink="/crm/pricing-plans">Pricing</a></li>
+        <li class="dropdown mega-menu">
+          <a href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown">
+            Support
+          </a>
+          <ul class="dropdown-menu">
+            <li><a target="_blank" href="https://support.biznstool.com/faq">Faq</a></li>
+            <li><a target="_blank" href="https://support.biznstool.com//knowledge">Knowledge Base</a></li>
+            <li><a target="_blank" href="https://support.biznstool.com/started">Just Started</a></li>
+            <li><a target="_blank" href="https://support.biznstool.com/video ">Video</a></li>
+          </ul>
+        </li>
+        <li title="New To Bizns Tool ?"><a routerLink="/signup">Try Free</a></li>
+      </ul>
+    </div><!--/end container-->
+  </div><!--/navbar-collapse-->
+</div>

@@ -1,0 +1,89 @@
+<div class="container content">
+  <div class="row">
+    <div class="col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2">
+
+      <form name="signUpForm" role="form" class="formpage" style="height:50%;padding-top:100px;" *ngIf="!itemVisible">
+        <div class="reg-header">
+          <h1>Thank you</h1>
+          <label>We sent a link to <a>{{registrationData.userName}}</a></label>
+          <br />
+          <br />
+          <label>Please confirm your email address to access Bizns Tool CRM</label>
+        </div>
+      </form>
+
+      <form name="signUpForm" role="form" class="formpage" *ngIf="itemVisible" novalidate #signUpForm="ngForm" (ngSubmit)="onSubmit(signUpForm)">
+
+        <div class="reg-header">
+          <h1>Register</h1>
+          <p>
+            Already Signed Up? Click <a routerLink="/login" class="signin-a">here</a> to login.
+          </p>
+        </div>
+
+        <label class="signin-label">Email Id <span class="color-red">*</span></label>
+        <input type="email" name="email" class="form-control margin-bottom-20" pattern="[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{1,63}$" required [(ngModel)]="registrationData.userName" #email="ngModel">
+        <p class="color-red" *ngIf="signUpForm.submitted && email.invalid">Please enter valid EmailId.</p>
+
+        <div class="row">
+          <div class="col-sm-12">
+            <span style="font-size:10px">[Use at least 8 characters.Should contain at least 1 special character except '&'.]</span>
+          </div>
+          <div class="col-sm-6">
+            <label class="signin-label">Password <span class="color-red">*</span></label>
+            <input type="password" name="password" class="form-control margin-bottom-20" required [(ngModel)]="registrationData.password" #password="ngModel">
+          </div>
+          <div class="col-sm-6">
+            <label class="signin-label">Confirm Password <span class="color-red">*</span></label>
+            <input type="password" class="form-control margin-bottom-20" required [(ngModel)]="registrationData.confirmPassword" validateEqual="password" name="confirmPassword" #confirmPassword="ngModel">
+          </div>
+          <div class="col-sm-6">
+            <p *ngIf="signUpForm.submitted && password.invalid" class="color-red">Please enter password.</p>
+          </div>
+          <div class="col-sm-6">
+            <p *ngIf="signUpForm.submitted && confirmPassword.invalid" class="color-red">Please Enter Confirm Password.</p>
+          </div>
+        </div>
+
+        <div class="row text-center">
+          <span class="color-red" [hidden]="(registrationData.password == registrationData.confirmPassword) || (registrationData.confirmPassword == '')">Password need to match</span>
+        </div>
+
+        <div class="row">
+          <div class="col-sm-6">
+            <label class="signin-label">First Name<span class="color-red">*</span></label>
+            <input type="text" name="firstName" class="form-control margin-bottom-20" required [(ngModel)]="registrationData.firstName" #firstName="ngModel">
+            <p *ngIf="signUpForm.submitted && firstName.invalid" class="color-red">Please Enter First Name.</p>
+          </div>
+          <div class="col-sm-6">
+            <label class="signin-label">Last Name<span class="color-red">*</span></label>
+            <input type="text" name="laststName" class="form-control margin-bottom-20" required [(ngModel)]="registrationData.lastName" #laststName="ngModel">
+            <p *ngIf="signUpForm.submitted && laststName.invalid" class="color-red">Please Enter Last Name.</p>
+          </div>
+        </div>
+
+        <label class="signin-label">Company Name<span class="color-red">*</span></label>
+        <input type="text" name="company" class="form-control margin-bottom-20" required [(ngModel)]="registrationData.companyName" #companyName="ngModel">
+        <p *ngIf="signUpForm.submitted && companyName.invalid" class="color-red">Please Enter Company Name.</p>
+
+        <div class="row">
+          <div class="col-lg-6 col-sm-8">
+
+            <input type="checkbox" name="agree" required (click)="agreeCondition()">
+            I read <a href="" class="signin-a" (click)="openTermsModalDlg($event)">Terms and Conditions</a>
+
+          </div>
+          <div class="col-lg-6 col-sm-4 text-right">
+            <button type="submit" class="btn-c pull-right" value="Register">
+              <span *ngIf="!isBusy">Register</span>
+              <span *ngIf="isBusy">Registering...</span>
+            </button>
+          </div>
+        </div>
+        <div [hidden]="message == ''" [ngClass]="{'alert alert-success': savedSuccessfully, 'alert alert-danger': !savedSuccessfully}">
+          {{message}}
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

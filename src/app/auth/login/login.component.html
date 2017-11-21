@@ -1,0 +1,54 @@
+<div class="container content">
+  <div class="row">
+    <div class="col-md-6 col-md-offset-3 col-sm-6 col-sm-offset-3">
+      <form name="loginForm" role="form" class="formpage" #loginForm="ngForm" (ngSubmit)="onSubmit(loginForm)">
+        <div class="reg-header">
+          <h1>Login </h1>
+        </div>
+        <div class="input-group margin-bottom-20">
+          <span class="input-group-addon"><i class="fa fa-user"></i></span>
+          <input type="email" name="name" placeholder="Username" class="form-control" pattern="[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{1,63}$" [(ngModel)]="model.email" required #name="ngModel">
+        </div>
+
+        <p class="color-red" *ngIf="loginForm.submitted && name.invalid">Please enter valid EmailId.</p>
+
+        <div class="input-group margin-bottom-20">
+          <span class="input-group-addon"><i class="fa fa-lock"></i></span>
+          <input type="password" name="password" placeholder="Password" class="form-control" [(ngModel)]="model.password" required #password="ngModel">
+        </div>
+
+        <p class="color-red" *ngIf="loginForm.submitted && password.invalid">Please enter password.</p>
+
+        <div class="row">
+          <div class="col-md-6 checkbox">
+            <!--<label class="signin-label"><input type="checkbox" ng-click="staySignIn()"> Stay signed in</label>-->
+          </div>
+          <div class="col-md-6">
+            <button class="btn-c pull-right" type="submit">
+              <span *ngIf="!isBusy">Login</span>
+              <span *ngIf="isBusy">Logging...</span>
+            </button>
+          </div>
+        </div>
+
+        <div *ngIf="message" class="alert alert-danger">
+          {{message}}
+        </div>
+
+        <hr>
+        <div class="reg-header">
+          <h4>Forgot Password ?</h4>
+          <p> <a class="signin-a" routerLink="/forgotpassword">click here</a> to Reset Password.</p>
+          <p><a class="signin-a" routerLink="/signup">click here</a> to Sign Up</p>
+        </div>
+      </form>
+    </div>
+  </div><!--/row-->
+  <!--<div class="row">
+      <div class="col-md-4 col-md-offset-4 ">
+          <h2 class="form-login-heading">Login In With</h2>
+          <button class="btn btn-large btn-google-plus btn-block" type="button" ng-click="authExternalProvider('Google')"><i class="fa fa-google-plus"></i> Google</button>
+      </div>
+  </div>-->
+
+</div>

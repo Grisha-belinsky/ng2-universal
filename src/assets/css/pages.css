@@ -1,0 +1,14 @@
+﻿/*Registration and Login Page v1
+------------------------------------*/
+.reg-page {
+	color: #555;
+	padding: 30px;
+	background: #fefefe;
+	border: solid 1px #eee;
+	box-shadow: 0 0 3px #4765a0;
+}
+
+/*Reg Forms*/
+.reg-page label {
+	color: #777;
+}
